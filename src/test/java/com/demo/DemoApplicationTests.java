@@ -107,5 +107,28 @@ class DemoApplicationTests {
         System.out.println(result);
     }
 
+    @Test
+    void testListSort(){
+        List<Integer> list = new ArrayList<>();
+        list.hashCode() ;
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        list.add(2);
+        list.sort((o1, o2) -> o2-o1);
+
+        list.stream().sorted().collect(Collectors.toList());
+    }
+
+
+    @Test
+    void testHashMap(){
+        Object a = new Object();
+        System.out.println(a.hashCode());
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1", "1");
+
+    }
+
 
 }
