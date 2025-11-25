@@ -78,57 +78,6 @@ class DemoApplicationTests {
         list.addFirst(3);
     }
 
-    @Test
-    void testInsertionSort() {
-        //插入排序
-        int[] arr = {5, 4, 3, 2, 1};
-        for(int i = 1; i < arr.length; i++){
-            int temp = arr[i];
-            int position=i-1;
-            while (position >= 0 ){
-                if(arr[position]> temp){
-                    arr[position+1] = arr[position];
-                } else{
-                    break;
-                }
-                position--;
-            }
-            arr[position+1] = temp;
-        }
-    }
-
-    @Test
-    void testIntersection() {
-        int[] arr1 = {5, 4, 3, 2, 1};
-        int[] arr2 = {5, 4, 3, 2, 1};
-        Set< Integer> set1 = Arrays.stream(arr1).boxed().collect(Collectors.toSet());
-        Set< Integer> set2 = Arrays.stream(arr2).boxed().collect(Collectors.toSet());
-        Set<Integer> result = set1.parallelStream().filter(set2::contains).collect(Collectors.toSet());
-        System.out.println(result);
-    }
-
-    @Test
-    void testListSort(){
-        List<Integer> list = new ArrayList<>();
-        list.hashCode() ;
-        list.add(5);
-        list.add(4);
-        list.add(3);
-        list.add(2);
-        list.sort((o1, o2) -> o2-o1);
-
-        list.stream().sorted().collect(Collectors.toList());
-    }
-
-
-    @Test
-    void testHashMap(){
-        Object a = new Object();
-        System.out.println(a.hashCode());
-        HashMap<String, String> map = new HashMap<>();
-        map.put("1", "1");
-
-    }
 
 
 }
